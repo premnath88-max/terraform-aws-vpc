@@ -100,7 +100,7 @@ resource "aws_route_table" "database" {
   tags = merge(
     local.common_tags,
     {
-      Name = "{var.project}-${var.environment}-database"
+      Name = "${var.project}-${var.environment}-database"
     },
     var.database_route_table_tags,
   )
@@ -119,7 +119,7 @@ resource "aws_eip" "nat" {
   tags = merge(
     local.common_tags,
     {
-      Name = "{var.project}-${var.environment}-nat"
+      Name = "${var.project}-${var.environment}-nat"
     },
     var.eip_tags,
   )
@@ -133,7 +133,7 @@ resource "aws_eip" "nat" {
   tags = merge(
     local.common_tags,
     {
-      Name = "{var.project}-${var.environment}"
+      Name = "${var.project}-${var.environment}"
     },
     var.nat_gateway_tags,
   )
